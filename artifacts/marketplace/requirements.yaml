@@ -1,0 +1,18 @@
+packages:
+  "framer-motion": "For page transitions and smooth multi-step form animations"
+  "react-hook-form": "For robust form state management in the post ad page"
+  "@hookform/resolvers": "For Zod validation integration with react-hook-form"
+  "date-fns": "For formatting listing creation dates"
+
+images:
+  - path: "artifacts/marketplace/public/images/hero-tech-bg.png"
+    description: "Modern abstract technology background, clean vibrant warm orange and deep navy blue gradients, subtle glowing circuitry and digital marketplace patterns, premium 3d render style, high contrast, elegant"
+    aspect_ratio: "16:9"
+  - path: "artifacts/marketplace/public/images/about-banner.png"
+    description: "Vibrant lifestyle photography of diverse happy young people using modern smartphones and tech accessories in a sunny vibrant city, warm lighting, energetic market vibe"
+    aspect_ratio: "21:9"
+
+notes:
+  - Using generated Orval hooks from @workspace/api-client-react
+  - Assuming category icons return emoji or simple text identifiers
+  - Using Algerian Dinar (DZD) for currency formatting
