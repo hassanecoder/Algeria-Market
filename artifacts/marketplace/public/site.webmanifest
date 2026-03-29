@@ -1,0 +1,21 @@
+{
+  "name": "Dzair-Tech Marketplace",
+  "short_name": "Dzair-Tech",
+  "description": "Algeria's leading tech marketplace. Buy and sell electronics, gadgets, components, and tech accessories. Connect with verified tech sellers across Algeria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ]
+}
