@@ -1,4 +1,4 @@
-import { db, wilayasTable, categoriesTable, brandsTable, listingsTable } from "@workspace/db";
+import { db, wilayasTable, categoriesTable, brandsTable, listingsTable, type InsertListing } from "@workspace/db";
 import { sql } from "drizzle-orm";
 
 const wilayas = [
@@ -107,9 +107,20 @@ const accessoryImages = [
 ];
 
 async function seed() {
-  console.log("🌱 Starting seed...");
+  const seedMode = process.env.SEED_MODE === "bootstrap" ? "bootstrap" : "reset";
+  console.log(`🌱 Starting seed in ${seedMode} mode...`);
 
-  await db.execute(sql`TRUNCATE TABLE listings, brands, categories, wilayas RESTART IDENTITY CASCADE`);
+  if (seedMode === "bootstrap") {
+    const existing = await db.select().from(listingsTable).limit(1);
+    if (existing.length > 0) {
+      console.log("Bootstrap seed skipped; listings already present");
+      return;
+    }
+  }
+
+  if (seedMode === "reset") {
+    await db.execute(sql`TRUNCATE TABLE listings, brands, categories, wilayas RESTART IDENTITY CASCADE`);
+  }
 
   console.log("📍 Inserting wilayas...");
   await db.insert(wilayasTable).values(wilayas);
@@ -129,7 +140,7 @@ async function seed() {
   const getBrand = (slug: string) => allBrands.find(b => b.slug === slug)!;
 
   console.log("📱 Inserting listings...");
-  const listings = [
+  const listings: InsertListing[] = [
     {
       title: "Samsung Galaxy S24 Ultra - Neuf sous blister",
       description: "Samsung Galaxy S24 Ultra 512GB Titanium Black, jamais utilisé, sous blister d'usine. Livré avec tous les accessoires d'origine. Garantie 1 an. Possibilité de livraison dans tout Alger.",
