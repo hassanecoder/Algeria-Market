@@ -58,7 +58,7 @@ export default function PostAd() {
     // Adding dummy images for the demo
     const payload: CreateListingRequest = {
       ...data,
-      images: ["https://images.unsplash.com/photo-1598327105666-5b89351cb31b?w=800&h=600&fit=crop"]
+      images: ["https://images.unsplash.com/photo-1560343090-f0409e92791a?w=800&h=600&fit=crop"]
     };
 
     createListing({ data: payload }, {

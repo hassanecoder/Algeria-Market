@@ -95,7 +95,7 @@ const phoneImages = [
   "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=400",
   "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=400",
   "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400",
-  "https://images.unsplash.com/photo-1609252924198-d3e6f22c9e08?w=400",
+  "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
   "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400",
 ];
 
